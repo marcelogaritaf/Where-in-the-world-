@@ -3,12 +3,15 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import theme from "./Tema";
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
-
+import { QueryClient, QueryClientProvider } from "react-query";
+const reactQuery = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-      <App />
+      <QueryClientProvider client={reactQuery}>
+        <App />
+      </QueryClientProvider>
     </ChakraProvider>
   </React.StrictMode>
 );
