@@ -1,9 +1,12 @@
-import { Box, Flex, Grid, GridItem, useColorMode } from "@chakra-ui/react";
+import { Box, Flex, useColorMode } from "@chakra-ui/react";
+import MainCountryPage from "./components/MainCountryPage";
 import Navbar from "./components/Navbar";
 import Search from "./components/Search";
 import "./index.css";
-import MainCountryPage from "./components/MainCountryPage";
 function App() {
+  const { colorMode } = useColorMode();
+  const background =
+    colorMode === "dark" ? "hsl(209, 23%, 22%)" : "hsla(210, 100%, 99%, 0.849)";
   return (
     <Flex
       // gridTemplateAreas={{
@@ -16,7 +19,7 @@ function App() {
       // }}
       direction={"column"}
     >
-      <Box backgroundColor={"hsl(209, 23%, 22%)"}>
+      <Box backgroundColor={background}>
         <Navbar />
       </Box>
       <Search />
