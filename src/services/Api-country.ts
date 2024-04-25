@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 // export interface FecthResponse<T>{
 //     results:T[];
 // }
@@ -10,8 +10,8 @@ class ApiCountry<T>{
     constructor(endpoint:string){
         this.endpoint= endpoint
     }
-    getAll=async()=>{
-        const res = await axiosInstance.get<T[]>(this.endpoint)
+    getAll=async(config:AxiosRequestConfig)=>{
+        const res = await axiosInstance.get<T[]>(this.endpoint, config)
         return res.data
     }
 }

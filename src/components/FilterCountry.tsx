@@ -1,9 +1,12 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
+import { BsChevronBarDown, BsChevronDown } from "react-icons/bs";
 
 const FilterCountry = () => {
   return (
     <Menu>
-      <MenuButton as={Button}>{"Filter By Region"}</MenuButton>
+      <MenuButton as={Button} rightIcon={<BsChevronDown />}>
+        {"Filter By Region"}
+      </MenuButton>
       <MenuList>
         <MenuItem>Africa</MenuItem>
         <MenuItem>America</MenuItem>
