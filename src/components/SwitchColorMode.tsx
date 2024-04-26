@@ -1,12 +1,4 @@
-import {
-  Button,
-  HStack,
-  Icon,
-  Switch,
-  Text,
-  useColorMode,
-} from "@chakra-ui/react";
-import React from "react";
+import { Button, HStack, Text, useColorMode } from "@chakra-ui/react";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 const SwitchColorMode = () => {

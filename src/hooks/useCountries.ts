@@ -1,5 +1,6 @@
 import { useQuery } from "react-query"
 import ApiCountry from "../services/Api-country"
+import useCountryStore from "../store";
 export interface country{ 
     name:{common:string, official:string};
     population: number;
@@ -10,8 +11,15 @@ export interface country{
     flags:{png:string, svg:string};
 }
 const apiCountry = new ApiCountry<country>('/all')
-const useCountries=()=>useQuery<country[]>({
-    queryKey:['countries'],
-    queryFn:apiCountry.getAll
-})
+const useCountries=()=>{
+    const countryQuery = useCountryStore(s=>s.countryQuery)
+    return useQuery<country[]>({
+        queryKey:['countries', countryQuery],
+        queryFn:()=>apiCountry.getAll({
+            params:{
+                search:countryQuery.searchText
+            }
+        })
+    })
+}
 export default useCountries;
