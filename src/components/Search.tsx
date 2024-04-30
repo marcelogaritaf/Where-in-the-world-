@@ -14,6 +14,7 @@ const Search = () => {
           e.preventDefault();
           if (searchRef.current) {
             setSearchText(searchRef.current.value);
+            console.log(searchRef.current.value);
           }
         }}
       >

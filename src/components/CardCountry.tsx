@@ -9,6 +9,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { country } from "../hooks/useCountries";
+import { Link } from "react-router-dom";
 interface Props {
   countries: country;
 }
@@ -17,8 +18,10 @@ const CardCountry = ({ countries }: Props) => {
     <Card boxShadow={"rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"}>
       <Image src={countries.flags.svg} />
       <CardBody>
-        <Heading marginBottom={5} fontSize={"2xl"}>
-          {countries.name.common}
+        <Heading marginBottom={5} fontSize={"2xl"} cursor={"pointer"}>
+          <Link to={"/countriesinfo/" + countries.name.common}>
+            {countries.name.common}
+          </Link>
         </Heading>
         <Text>Population: {countries.population}</Text>
         <Text>Region: {countries.region}</Text>
