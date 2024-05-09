@@ -11,7 +11,8 @@ export interface country{
     continents:string[];
     flags:{png:string, svg:string};
     tld:string[];
-    
+    borders:string[];
+    languages:{[code:string]:string};
 }
 const apiCountry = new ApiCountry<country>('/all')
 const useCountries=()=>{
