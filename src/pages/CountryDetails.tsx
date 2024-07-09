@@ -21,23 +21,29 @@ const CountryDetails = () => {
   return (
     <>
       <BtnDetailPage />
-      <SimpleGrid columns={{ base: 1, md: 2 }} paddingX={"55px"}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} paddingX={"100px"}>
         <GridItem>
           {data.map((d, index) => (
-            <Image src={d.flags.png} height={"250px"} key={index} />
+            <Image src={d.flags.png} height={"280px"} key={index} />
           ))}
         </GridItem>
         <GridItem>
           {data.map((d, index) => (
             <Box key={index}>
-              <Heading>{d.name.official}</Heading>
-              <Text>Population: {d.population}</Text>
-              <Text>Region: {d.region}</Text>
-              <Text>Sub Region: {d.subregion}</Text>
-              <Text>Capital: {d.capital}</Text>
-              <Text>Top Level Domian: {d.tld}</Text>
-              <Text>Languages: {d.languages.code}</Text>
-              <Text>
+              <Heading marginBottom={5}>{d.name.official}</Heading>
+              <SimpleGrid columns={{ base: 1, md: 2 }} spacingY={"10px"}>
+                <GridItem>
+                  <Text>Population: {d.population.toLocaleString()}</Text>
+                  <Text>Region: {d.region}</Text>
+                  <Text>Sub Region: {d.subregion}</Text>
+                  <Text>Capital: {d.capital}</Text>
+                </GridItem>
+                <GridItem>
+                  <Text>Top Level Domian: {d.tld}</Text>
+                  <Text>Languages: {d.languages.code}</Text>
+                </GridItem>
+              </SimpleGrid>
+              <Text marginTop={"50px"}>
                 Border Countries:{"  "}
                 {d.borders?.map((bor, index) => (
                   <Button

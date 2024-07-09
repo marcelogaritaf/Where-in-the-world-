@@ -23,7 +23,7 @@ const CardCountry = ({ countries }: Props) => {
             {countries.name.common}
           </Link>
         </Heading>
-        <Text>Population: {countries.population}</Text>
+        <Text>Population: {countries.population.toLocaleString()}</Text>
         <Text>Region: {countries.region}</Text>
         <HStack>
           <Text>Capital:</Text>
