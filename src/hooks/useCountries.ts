@@ -11,8 +11,15 @@ interface Currencies{
 interface Languages{
     [code:string]:string
 }
+interface NativeLanguageName{
+    official:string,
+    common:string
+}
+interface NativeName{
+    [languageCode:string]:NativeLanguageName
+}
 export interface country{ 
-    name:{common:string, official:string};
+    name:{common:string, official:string, nativeName:NativeName};
     population: number;
     capital:string[];
     region:string;
