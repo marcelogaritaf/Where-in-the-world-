@@ -1,7 +1,13 @@
 import { useQuery } from "react-query"
 import ApiCountry from "../services/Api-country"
 import useCountryStore from "../store";
-
+interface currency{
+    name:string,
+    symbol: string
+}
+interface Currencies{
+    [code:string]:currency
+}
 export interface country{ 
     name:{common:string, official:string};
     population: number;
@@ -13,6 +19,7 @@ export interface country{
     tld:string[];
     borders:string[];
     languages:{[code:string]:string};
+    currencies: Currencies
 }
 const apiCountry = new ApiCountry<country>('/all')
 const useCountries=()=>{

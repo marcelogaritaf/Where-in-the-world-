@@ -39,7 +39,20 @@ const CountryDetails = () => {
                   <Text>Capital: {d.capital}</Text>
                 </GridItem>
                 <GridItem>
-                  <Text>Top Level Domian: {d.tld}</Text>
+                  <Text>Top Level Domian: {d.tld.join(",")}</Text>
+                  <Text>
+                    Currencies:{" "}
+                    {Object.entries(d.currencies).map(
+                      ([code, currency], index) => (
+                        <span key={index}>
+                          {currency.name} ({currency.symbol})
+                          {index < Object.entries(d.currencies).length - 1
+                            ? ","
+                            : " "}
+                        </span>
+                      )
+                    )}
+                  </Text>
                   <Text>Languages: {d.languages.code}</Text>
                 </GridItem>
               </SimpleGrid>
