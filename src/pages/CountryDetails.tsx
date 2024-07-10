@@ -42,7 +42,7 @@ const CountryDetails = () => {
               >
                 <GridItem>
                   <Text>
-                    Native Name:{" "}
+                    <b>Native Name: </b>
                     {Object.entries(d.name.nativeName).map(
                       ([code, nativeName], index) => (
                         <span key={index}>
@@ -54,15 +54,25 @@ const CountryDetails = () => {
                       )
                     )}
                   </Text>
-                  <Text>Population: {d.population.toLocaleString()}</Text>
-                  <Text>Region: {d.region}</Text>
-                  <Text>Sub Region: {d.subregion}</Text>
-                  <Text>Capital: {d.capital}</Text>
+                  <Text>
+                    <b>Population: </b> {d.population.toLocaleString()}
+                  </Text>
+                  <Text>
+                    <b>Region:</b> {d.region}
+                  </Text>
+                  <Text>
+                    <b>Sub Region:</b> {d.subregion}
+                  </Text>
+                  <Text>
+                    <b>Capital:</b> {d.capital}
+                  </Text>
                 </GridItem>
                 <GridItem>
-                  <Text>Top Level Domian: {d.tld.join(",")}</Text>
                   <Text>
-                    Currencies:{" "}
+                    <b>Top Level Domian:</b> {d.tld.join(",")}
+                  </Text>
+                  <Text>
+                    <b>Currencies:</b>{" "}
                     {Object.entries(d.currencies).map(
                       ([code, currency], index) => (
                         <span key={index}>
@@ -75,12 +85,13 @@ const CountryDetails = () => {
                     )}
                   </Text>
                   <Text>
-                    Languages: {Object.values(d.languages).join(", ")}
+                    <b>Languages:</b> {Object.values(d.languages).join(", ")}
                   </Text>
                 </GridItem>
               </SimpleGrid>
               <Text marginTop={"50px"}>
-                Border Countries:{"  "}
+                <b>Border Countries:</b>
+                {"  "}
                 {d.borders?.map((bor, index) => (
                   <Button
                     marginRight={4}
