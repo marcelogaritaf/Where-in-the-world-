@@ -53,7 +53,9 @@ const CountryDetails = () => {
                       )
                     )}
                   </Text>
-                  <Text>Languages: {d.languages.code}</Text>
+                  <Text>
+                    Languages: {Object.values(d.languages).join(", ")}
+                  </Text>
                 </GridItem>
               </SimpleGrid>
               <Text marginTop={"50px"}>

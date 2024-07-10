@@ -8,6 +8,9 @@ interface currency{
 interface Currencies{
     [code:string]:currency
 }
+interface Languages{
+    [code:string]:string
+}
 export interface country{ 
     name:{common:string, official:string};
     population: number;
@@ -18,7 +21,7 @@ export interface country{
     flags:{png:string, svg:string};
     tld:string[];
     borders:string[];
-    languages:{[code:string]:string};
+    languages:Languages;
     currencies: Currencies
 }
 const apiCountry = new ApiCountry<country>('/all')
