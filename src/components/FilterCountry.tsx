@@ -1,5 +1,5 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
-import { BsChevronBarDown, BsChevronDown } from "react-icons/bs";
+import { BsChevronDown } from "react-icons/bs";
 
 const FilterCountry = () => {
   return (

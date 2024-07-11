@@ -8,6 +8,7 @@ const CountryCardContainer = ({ children }: Props) => {
     <Box
       borderRadius={5}
       width={"100%"}
+      height={"364px"}
       overflow={"hidden"}
       boxShadow={"rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"}
     >

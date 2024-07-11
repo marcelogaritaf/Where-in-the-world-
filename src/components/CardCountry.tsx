@@ -16,8 +16,8 @@ interface Props {
 const CardCountry = ({ countries }: Props) => {
   return (
     <Card boxShadow={"rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"}>
-      <Image src={countries.flags.svg} height={"185px"} />
-      <CardBody>
+      <Image src={countries.flags.png} height={"187px"} />
+      <CardBody marginBottom={"10px"}>
         <Heading marginBottom={5} fontSize={"2xl"} cursor={"pointer"}>
           <Link to={"/countriesinfo/" + countries.name.official}>
             {countries.name.common}
