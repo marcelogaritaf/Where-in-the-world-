@@ -1,7 +1,6 @@
 import { Box, useColorMode } from "@chakra-ui/react";
-import React from "react";
-import Navbar from "../components/Navbar";
 import { Outlet } from "react-router";
+import Navbar from "../components/Navbar";
 
 const LayOut = () => {
   const { colorMode } = useColorMode();

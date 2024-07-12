@@ -1,4 +1,3 @@
-import React from "react";
 import { country } from "../hooks/useCountries";
 import {
   GridItem,

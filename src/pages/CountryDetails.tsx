@@ -1,6 +1,3 @@
-import BtnDetailPage from "../components/BtnDetailPage";
-import { Link, useParams, useSearchParams } from "react-router-dom";
-import useCountry from "../hooks/useCountry";
 import {
   Box,
   Button,
@@ -11,11 +8,13 @@ import {
   Spinner,
   Text,
 } from "@chakra-ui/react";
+import { useParams } from "react-router-dom";
+import BtnDetailPage from "../components/BtnDetailPage";
+import useCountry from "../hooks/useCountry";
 
 const CountryDetails = () => {
   const { name } = useParams();
   const { data, isLoading, error } = useCountry(name!);
-  console.log(data);
   if (isLoading) return <Spinner />;
   if (error || !data) throw error;
   return (

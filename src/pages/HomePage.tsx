@@ -1,7 +1,6 @@
-import { Box, Flex } from "@chakra-ui/react";
-import React from "react";
-import Search from "../components/Search";
+import { Flex } from "@chakra-ui/react";
 import MainCountryPage from "../components/MainCountryPage";
+import Search from "../components/Search";
 const HomePage = () => {
   return (
     <Flex direction={"column"}>
