@@ -33,6 +33,7 @@ export interface country{
 }
 const apiCountry = new ApiCountry<country>('/all')
 const apiCountryByName= new ApiCountry<country>('/name/')
+const apiCountryByRegion = new ApiCountry<country>('/region/')
 const useCountries=()=>{
     const countryQuery = useCountryStore(s=>s.countryQuery)
     return useQuery<country[]>({
@@ -40,7 +41,10 @@ const useCountries=()=>{
         queryFn:()=>{
             if(countryQuery.searchText){
                 return apiCountryByName.getByName(countryQuery.searchText) 
-            }else{
+            }else if(countryQuery.filterRegion){
+                return apiCountryByRegion.getByName(countryQuery.filterRegion)
+            }
+            else{
                 return apiCountry.getAll()
             }
         }
