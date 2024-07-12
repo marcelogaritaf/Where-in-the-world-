@@ -32,15 +32,18 @@ export interface country{
     currencies: Currencies
 }
 const apiCountry = new ApiCountry<country>('/all')
+const apiCountryByName= new ApiCountry<country>('/name/')
 const useCountries=()=>{
     const countryQuery = useCountryStore(s=>s.countryQuery)
     return useQuery<country[]>({
         queryKey:['countries', countryQuery],
-        queryFn:()=>apiCountry.getAll({
-            params:{
-                search:countryQuery.searchText
+        queryFn:()=>{
+            if(countryQuery.searchText){
+                return apiCountryByName.getByName(countryQuery.searchText) 
+            }else{
+                return apiCountry.getAll()
             }
-        })
+        }
     })
 }
 export default useCountries;

@@ -10,12 +10,12 @@ class ApiCountry<T>{
     constructor(endpoint:string){
         this.endpoint= endpoint
     }
-    getAll=async(config:AxiosRequestConfig)=>{
-        const res = await axiosInstance.get<T[]>(this.endpoint, config)
+    getAll=async(config?:AxiosRequestConfig)=>{
+        const res = await axiosInstance.get<T[]>(this.endpoint,config)
         return res.data
     }
-    getByName=async(id:number|string)=>{
-        const res = await axiosInstance.get<T[]>(this.endpoint+'/'+id)
+    getByName=async(id:string)=>{
+        const res = await axiosInstance.get<T[]>(this.endpoint+id)
         return res.data
     }
 }
