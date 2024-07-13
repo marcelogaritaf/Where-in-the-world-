@@ -1,6 +1,5 @@
 import {
   GridItem,
-  HStack,
   Input,
   InputGroup,
   InputLeftElement,
@@ -8,9 +7,9 @@ import {
 } from "@chakra-ui/react";
 import { useRef } from "react";
 import { BsSearch } from "react-icons/bs";
+import { useNavigate } from "react-router";
 import useCountryStore from "../store";
 import FilterCountry from "./FilterCountry";
-import { useNavigate } from "react-router";
 
 const Search = () => {
   const searchRef = useRef<HTMLInputElement>(null);

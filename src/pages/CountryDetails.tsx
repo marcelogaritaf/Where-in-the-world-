@@ -44,7 +44,7 @@ const CountryDetails = () => {
                     <b>Native Name: </b>
                     {Object.entries(d.name.nativeName).map(
                       ([code, nativeName], index) => (
-                        <span key={index}>
+                        <span key={code}>
                           {nativeName.common}
                           {index < Object.entries(d.name.nativeName).length - 1
                             ? ","
@@ -74,7 +74,7 @@ const CountryDetails = () => {
                     <b>Currencies:</b>{" "}
                     {Object.entries(d.currencies).map(
                       ([code, currency], index) => (
-                        <span key={index}>
+                        <span key={code}>
                           {currency.name} ({currency.symbol})
                           {index < Object.entries(d.currencies).length - 1
                             ? ","
