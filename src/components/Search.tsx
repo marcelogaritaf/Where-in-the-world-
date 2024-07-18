@@ -26,7 +26,7 @@ const Search = () => {
         paddingX={"30px"}
         paddingY={"30px"}
         spacingY={"50px"}
-        spacingX={{ base: "580px", lg: "300px", xl: "500px", "2xl": "800px" }}
+        spacingX={{ base: "580px", lg: "200px", xl: "400px", "2xl": "800px" }}
       >
         <GridItem>
           <form
