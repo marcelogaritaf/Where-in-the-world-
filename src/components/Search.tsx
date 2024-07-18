@@ -20,13 +20,13 @@ const Search = () => {
       <SimpleGrid
         templateColumns={{
           base: "1fr",
-          lg: "1fr 1fr",
-          xl: "1fr 1fr",
+          lg: "500px 1fr",
+          xl: "6oopx 1fr",
         }}
         paddingX={"30px"}
         paddingY={"30px"}
         spacingY={"50px"}
-        spacingX={"580px"}
+        spacingX={{ base: "580px", lg: "300px", xl: "500px", "2xl": "800px" }}
       >
         <GridItem>
           <form
